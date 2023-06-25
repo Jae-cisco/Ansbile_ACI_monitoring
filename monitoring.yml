@@ -18,7 +18,7 @@
       username: "{{ username }}"
       path: api/node/class/faultSummary.json
       method: get
-      register: query_result
+    register: query_result
 
   - debug:
       msg: query_result
