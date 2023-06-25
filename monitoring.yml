@@ -16,6 +16,7 @@
       <<: *aci_login
       hostname: "{{ inventory_hostname }}"
       username: "{{ username }}"
+      password: '{{ password }}' 
       path: api/node/class/faultSummary.json
       method: get
     register: query_result
