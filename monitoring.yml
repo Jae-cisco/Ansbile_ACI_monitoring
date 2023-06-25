@@ -24,3 +24,17 @@
   - name: print result
     debug: 
       var: query_result
+
+  - name: Get Event Sumary from APIC
+    aci_rest:
+      <<: *aci_login
+      hostname: "{{ inventory_hostname }}"
+      username: "{{ username }}"
+      password: '{{ password }}' 
+      path: api/node/class/eventRecord.json
+      method: get
+    register: query_result_event
+    
+  - name: print result
+    debug: 
+      var: query_result_event
