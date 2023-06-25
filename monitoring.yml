@@ -20,5 +20,4 @@
       method: get
     register: query_result
 
-  - debug:
-      msg: query_result
+  - debug: query_result
