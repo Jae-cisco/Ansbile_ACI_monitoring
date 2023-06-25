@@ -22,5 +22,5 @@
     register: query_result
 
   - name: print result
-  - debug: 
+    debug: 
       var: query_result
