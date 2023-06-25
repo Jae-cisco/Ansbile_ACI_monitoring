@@ -11,10 +11,14 @@
       validate_certs: False 
   tasks:
 
-  - name: Create Tenants using CSV and loop
+  - name: Get Fault Sumary from APIC
     cisco.aci.aci_rest:
       <<: *aci_login
       hostname: "{{ inventory_hostname }}"
       username: "{{ username }}"
       path: api/node/class/faultSummary.json
       method: get
+      register: query_result
+
+  - debug:
+      msg: query_result
