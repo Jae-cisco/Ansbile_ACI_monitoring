@@ -1,0 +1,20 @@
+---
+- name: Configuring Tenant with CSV file
+  hosts: apic1
+  connection: local
+  gather_facts: false
+  vars:
+    aci_login: &aci_login
+      hostname: '{{ inventory_hostname }}'
+      username: '{{ username }}'
+      password: '{{ password }}' 
+      validate_certs: False 
+  tasks:
+
+  - name: Create Tenants using CSV and loop
+    cisco.aci.aci_rest:
+      <<: *aci_login
+      hostname: "{{ inventory_hostname }}"
+      username: "{{ username }}"
+      path: api/node/class/faultSummary.json
+      method: get
