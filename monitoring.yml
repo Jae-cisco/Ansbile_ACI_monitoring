@@ -12,7 +12,7 @@
   tasks:
 
   - name: Get Fault Sumary from APIC
-    cisco.aci.aci_rest:
+    aci_rest:
       <<: *aci_login
       hostname: "{{ inventory_hostname }}"
       username: "{{ username }}"
