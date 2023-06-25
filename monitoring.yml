@@ -1,5 +1,5 @@
 ---
-- name: Configuring Tenant with CSV file
+- name: Start ACI Moitoring
   hosts: apic1
   connection: local
   gather_facts: false
@@ -21,4 +21,6 @@
       method: get
     register: query_result
 
-  #- debug: query_result
+  - name: print result
+  - debug: 
+      var: query_result
